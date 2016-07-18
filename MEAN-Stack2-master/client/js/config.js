@@ -1,7 +1,7 @@
 angular.module('nibs.config', [])
 
     //.constant('SERVER_URL', 'https://custome-nibs.herokuapp.com')
-    .constant('SERVER_URL', 'https://mean-stack1.herokuapp.com')
+    .constant('SERVER_URL', 'https://warrenty-g-mean.herokuapp.com')
 
     //.constant('FB_APP_ID','176787595998073')
     .constant('FB_APP_ID','626548130816556')
