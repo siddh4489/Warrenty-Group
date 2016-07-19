@@ -6,7 +6,7 @@ angular.module('nibs.profile', ['nibs.s3uploader', 'nibs.config', 'nibs.status']
         $stateProvider
 
             .state('app.profile', {
-                url: "/profile",
+                url: "/welcome",
                 views: {
                     'menuContent' :{
                         templateUrl: "templates/profile.html",
