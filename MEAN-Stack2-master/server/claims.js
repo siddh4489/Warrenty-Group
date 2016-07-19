@@ -32,14 +32,14 @@ function createClaims(req, res, next) {
         .then(function (user) {
             console.log("sfid: " + user.sfid);
             // case is a reserved word. using _case instead.
-            var _case = nforce.createSObject('Case');
-            _case.set('contactId', user.sfid);
-            _case.set('subject', req.body.subject);
-            _case.set('description', req.body.description);
-            _case.set('origin', 'Web');
-            _case.set('status', 'New');
+            var claimObj = nforce.createSObject('Claim__c');
+            claimObj.set('Claimant_Name__c', req.body.claimant);
+            claimObj.set('Communication_Address__c', req.body.address);
+            claimObj.set('PAN_Number__c', req.body.panno);
+            claimObj.set('Policy_Holder_Name__c', req.body.policyholdername);
+            claimObj.set('Telephone_Number__c', req.body.phone);
 
-            org.insert({ sobject: _case}, function(err, resp){
+            org.insert({ sobject: claimObj}, function(err, resp){
                 if (err) {
                     console.log('First case insert failed: ' + JSON.stringify(err));
                     org.authenticate({username: userName, password: password}, function(err) {
@@ -48,7 +48,7 @@ function createClaims(req, res, next) {
                             return next(err);
                         } else {
                             // retry
-                            org.insert({ sobject: _case}, function(err, resp) {
+                            org.insert({ sobject: claimObj}, function(err, resp) {
                                 if (err) {
                                     console.log('Second case insert failed: ' + JSON.stringify(err));
                                     return next(err);
