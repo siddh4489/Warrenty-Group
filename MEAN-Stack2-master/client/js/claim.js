@@ -3,8 +3,8 @@ angular.module('nibs.claim', ['nibs.config'])
     // Routes
     .config(function ($stateProvider) {
         $stateProvider
-            .state('app.claim', {
-                url: "/claim",
+            .state('app.claimcall', {
+                url: "/claimForm",
                 views: {
                     'menuContent' :{
                         templateUrl: "templates/claim.html",
@@ -24,7 +24,7 @@ angular.module('nibs.claim', ['nibs.config'])
     })
 
     //Controllers
-    .controller('ClaimController', function ($scope, $window, $ionicPopup, Case) {
+    .controller('ClaimController', function ($scope, $window, $ionicPopup, Claim) {
        
 
         $scope.claim = {};
