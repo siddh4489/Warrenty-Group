@@ -1,10 +1,10 @@
-angular.module('nibs.claim', ['nibs.config'])
+angular.module('nibs.case', ['nibs.config'])
 
     // Routes
     .config(function ($stateProvider) {
         $stateProvider
-            .state('app.claimcall', {
-                url: "/claimhelp",
+            .state('app.claim', {
+                url: "/help",
                 views: {
                     'menuContent' :{
                         templateUrl: "templates/claim.html",
@@ -15,16 +15,16 @@ angular.module('nibs.claim', ['nibs.config'])
     })
 
     // Services
-    .factory('Claim', function ($http, $rootScope) {
+    .factory('Case', function ($http, $rootScope) {
         return {
             create: function(theCase) {
-                return $http.post($rootScope.server.url + '/claims/', theCase);
+                return $http.post($rootScope.server.url + '/cases/', theCase);
             }
         };
     })
 
     //Controllers
-    .controller('CaseCtrl', function ($scope, $window, $ionicPopup, Claim, User) {
+    .controller('CaseCtrl', function ($scope, $window, $ionicPopup, Case, User) {
         var user = JSON.parse($window.localStorage.getItem('user'));
         console.log('the user email is'+user.email);
         startChat();
@@ -43,14 +43,16 @@ angular.module('nibs.claim', ['nibs.config'])
              }
              }
 
-        $scope.claim = {};
+        $scope.case = {};
 
         $scope.submit = function () {
-           
-                Claim.create($scope.claim).success(function() {
+            if($scope.case.subject=='undefined' || $scope.case.description=='undefined' || $scope.case.subject=='' || $scope.case.description==''){
+                $ionicPopup.alert({title: 'Alert', content: 'Please enter the Subject/Description.'});
+            }else{
+                Case.create($scope.case).success(function() {
                      $ionicPopup.alert({title: 'Thank You', content: 'A customer representative will contact you shortly.'});
                 });
-           
+            }
         };
 
         function startChat(){
