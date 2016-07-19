@@ -1,9 +1,9 @@
-angular.module('nibs.home', ['nibs.config'])
+angular.module('nibs.homeview', ['nibs.config'])
 
     // Routes
     .config(function ($stateProvider) {
         $stateProvider
-            .state('app.home', {
+            .state('app.homepage', {
                 url: "/homepage",
                 views: {
                     'menuContent' :{
@@ -15,25 +15,25 @@ angular.module('nibs.home', ['nibs.config'])
     })
 
     // Services
-    .factory('Home', function ($http, $rootScope) {
+    .factory('Homeview', function ($http, $rootScope) {
         return {
             create: function(theHome) {
-                return $http.post($rootScope.server.url + '/homes/', theHome);
+                return $http.post($rootScope.server.url + '/homeviews/', theHome);
             }
         };
     })
 
     //Controllers
-    .controller('HomeController', function ($scope, $window, $ionicPopup, Home, User) {
+    .controller('HomeController', function ($scope, $window, $ionicPopup, Homeview, User) {
        
 
-        $scope.home = {};
+        $scope.homeview = {};
 
         $scope.submit = function () {
             
-                Home.create($scope.home).success(function() {
+                Homeview.create($scope.homeview).success(function() {
                      $ionicPopup.alert({title: 'Thank You', content: 'A customer representative will contact you shortly.'});
-                });
+                 });
           
         };
 
