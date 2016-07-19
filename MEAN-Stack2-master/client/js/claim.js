@@ -30,7 +30,7 @@ angular.module('nibs.claim', ['nibs.config'])
         $scope.claim = {};
 
         $scope.submit = function () {
-            if($scope.claim.subject=='undefined' || $scope.claim.description=='undefined' || $scope.claim.subject=='' || $scope.claim.description==''){
+            if($scope.claim.Name=='undefined'  || $scope.claim.Name=='' ){
                 $ionicPopup.alert({title: 'Alert', content: 'Please enter the Subject/Description.'});
             }else{
                 Claim.create($scope.claim).success(function() {
