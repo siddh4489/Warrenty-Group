@@ -1,59 +1,17 @@
-<ion-view title="My Account" hide-back-button="true" class="profile">
+<ion-view title="Home" hide-back-button="true" class="profile">
 
     <ion-nav-buttons side="left">
         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
-    <ion-nav-buttons side="right">
-        <a class="button button-clear" href="#/app/edit-profile">Edit</a>
-    </ion-nav-buttons>
+   
+    <div style="margin-top: 50px;text-align: center;">
 
-    <ion-content padding="false" scroll="false">
-
-        <div ng-if="user.id">
-            <div class="header status{{user.status}}-bg">
-                <img class="avatar" ng-src="{{user.pictureurl || 'img/avatar.jpg'}}" ng-click="popupDialog()"/>
-                <h2>{{user.firstname}} {{user.lastname}}</h2>
-                <h3>Member since : {{user.createddate | date:'longDate'}}</h3>
-                <h3 ng-if="user.mg_company_name__c">Company name : {{user.mg_company_name__c}}</h3>
-                <h3 ng-if="user.mg_business_telephneno__c">Office phone : {{user.mg_business_telephneno__c}}</h3>
-                <h3 ng-if="!user.mg_business_telephneno__c">Office phone : --</h3>
-                <h3 ng-if="user.mg_business_telephneno__c">Business type : {{user.mg_business_type__c}}</h3>
-                <h3 ng-if="!user.mg_business_telephneno__c">Business type : --</h3>
-            </div>
-
-            <div style="padding: 8px 16px;" class="status{{user.status}}">
-
-                <div class="profile-status">
-                    <div>
-                        <div class="profile-level">{{statusLabel}} Member</div>
-
-                        <p>{{statusDescription}}</p>
-                    </div>
-                    <!--<div class="icon-status icon-status{{user.status}}"></div>-->
-                </div>
-
-                <div class="status-bar">
-                    <div class="forastero">
-                        <a href="http://resource-suites-3.myshopify.com/collections/mailgapp">
-                            <p>Mobile Office</p>
-                        </a>
-                    </div>
-                    <div class="trinitario">
-                        <a href="http://resource-suites-3.myshopify.com/collections/virtual-offices-honolulu">
-                            <p>Virtual Office</p>
-                        </a>
-
-                    </div>
-                    <div class="Criollo">
-                        <a href="http://resource-suites-3.myshopify.com/collections/executive-suites">
-                            <p>Serviced Office</p>
-                        </a>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
+            <!--<img src="css/img/logo.svg" style="width:65%; margin:0 auto;display: block;"/>-->
+           
+            <img src="/img/wLogoBlack2.png" style="width:300px;height:300px;text-align:center;margin-top: 200px auto"/>
+            <h2 style="margin-top: 2px;">Welcome to Warrenty Group</h2>
+    
+     </div>  
 
     </ion-content>
 
