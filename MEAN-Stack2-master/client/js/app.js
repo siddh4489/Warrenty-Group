@@ -1,4 +1,4 @@
-var app = angular.module('nibs', ['ionic','openfb','naif.base64','nibs.myaccount','nibs.mailgapform','nibs.config','nibs.profile', 'nibs.auth', 'nibs.product', 'nibs.offer', 'nibs.store-locator', 'nibs.gallery', 'nibs.settings', 'nibs.case','nibs.claim', 'nibs.fileupload'])
+var app = angular.module('nibs', ['ionic','openfb','naif.base64','nibs.myaccount','nibs.mailgapform','nibs.config','nibs.profile', 'nibs.auth', 'nibs.product', 'nibs.offer', 'nibs.store-locator', 'nibs.gallery', 'nibs.settings', 'nibs.case', 'nibs.fileupload'])
 
     .run(function ($window, $location, $rootScope, $state, $ionicPlatform, $http, OpenFB, FB_APP_ID, SERVER_URL) {
 
