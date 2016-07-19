@@ -24,7 +24,7 @@ angular.module('nibs.claim', ['nibs.config'])
     })
 
     //Controllers
-    .controller('ClaimController', function ($scope, $window, $ionicPopup, Claims, User) {
+    .controller('ClaimController', function ($scope, $window, $ionicPopup, Claim, User) {
        
 
         $scope.claim = {};
