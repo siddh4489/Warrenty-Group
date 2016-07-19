@@ -1,4 +1,4 @@
-<ion-view title="Claim" hide-back-button="true">
+<ion-view title="Claim Form" hide-back-button="true">
 
     <ion-nav-buttons side="left">
         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
@@ -11,11 +11,11 @@
 
             <div class=list>
                 <label class="item item-input">
-                    <input type="text" placeholder="Subject" ng-model="case.subject" required>
+                    <input type="text" placeholder="Subject" ng-model="claim.subject" required>
                 </label>
                 <br/>
                 <div class="item item-body">
-                    <textarea placeholder="Description" ng-model="case.description" rows="10" required></textarea>
+                    <textarea placeholder="Description" ng-model="claim.description" rows="10" required></textarea>
                 </div>
             </div>
 
@@ -24,22 +24,7 @@
             </button>
 
             <p><strong>{{status}}</strong></p>
-
         </div>
-
-        <!--   Enable for SOS button-->
-        <div class="text-align:center">
-            <button id="liveagent_button_online_573j0000000GzbP" onclick="liveagent.startChat('573j0000000GzbP')" class="button icon ion-help-buoy sos-button">&nbsp;Live Chat</button>
-        </div>
-
-        <div class="text-align:center">
-            <a href="tel:+18889798881">
-                        <button class="button icon ion-help-buoy sos-button">&nbsp;Call Us</button>
-            </a>
-        </div>
-        <!--<div class="text-align:center">-->
-            <!--<button class="button icon ion-help-buoy sos-button" ng-click="sos()">&nbsp;SOS</button>-->
-        <!--</div>-->
 
     </ion-content>
 
