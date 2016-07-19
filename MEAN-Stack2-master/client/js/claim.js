@@ -32,7 +32,7 @@ angular.module('nibs.claim', ['nibs.config'])
         $scope.submit = function () {
             
                 Claim.create($scope.claim).success(function() {
-                     $ionicPopup.alert({title: 'Thank You', content: 'A customer representative will contact you shortly.'});
+                     $ionicPopup.alert({title: 'Thank You', content: 'Your Claim submitted successfully.'});
                 });
           
         };
