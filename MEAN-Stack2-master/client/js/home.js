@@ -31,7 +31,7 @@ angular.module('nibs.home', ['nibs.config'])
 
         $scope.submit = function () {
             
-                Home.create($scope.claim).success(function() {
+                Home.create($scope.home).success(function() {
                      $ionicPopup.alert({title: 'Thank You', content: 'A customer representative will contact you shortly.'});
                 });
           
