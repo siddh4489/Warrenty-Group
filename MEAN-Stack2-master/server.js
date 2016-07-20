@@ -13,6 +13,7 @@ var express = require('express'),
     users = require('./server/users'),
     cases = require('./server/cases'),
     claims = require('./server/claims'),
+    claimlists = require('./server/claimlists'),
     
     wallet = require('./server/wallet'),
     wishlist = require('./server/wishlist'),
@@ -93,6 +94,7 @@ app.delete('/activities', auth.validateToken, activities.deleteAll);
 
 app.post('/cases', auth.validateToken, cases.createCase);
 app.post('/claims', auth.validateToken, claims.createClaims);
+app.post('/claimlists', auth.validateToken, claimlists.getClaims);
 app.get('/nfrevoke', cases.revokeToken);
 app.post('/tasks', auth.validateToken, offers.createTask);
 
