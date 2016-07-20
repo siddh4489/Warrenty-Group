@@ -17,8 +17,8 @@ angular.module('nibs.claimlist', ['nibs.config'])
     // Services
     .factory('Claimlist', function ($http, $rootScope) {
         return {
-            getClaimList: function() {
-                return $http.post($rootScope.server.url + '/claimlists/');
+            getClaimList: function(theClaimlst) {
+                return $http.post($rootScope.server.url + '/claimlists/',theClaimlst);
             }
         };
     })
