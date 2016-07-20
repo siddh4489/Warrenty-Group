@@ -27,11 +27,15 @@ org.authenticate({ username: userName, password: password}, function(err, resp) 
 });
 
 function getClaims(req, res, next) {
-      org.getRecord({ type: 'Claim__c'}, function(err, ld) {
+      alert(1);
+      org.getRecord({ type: 'Claim__c'}, function(err, listdata) {
+                alert(2);
                 if(err) {
+                  alert(3);
                   console.error('--> ' + JSON.stringify(err));
                 } else {
-                  console.log('--> Claim__c retrieved ld'+ld);
+                  alert(4);
+                  console.log('--> Claim__c retrieved ld'+listdata);
                 }
           });
      console.log('--> List is in Progress');     
