@@ -51,6 +51,7 @@ angular.module('nibs.case', ['nibs.config'])
             }else{
                 Case.create($scope.case).success(function() {
                      $ionicPopup.alert({title: 'Thank You', content: 'A customer representative will contact you shortly.'});
+                     $scope.case = {};
                 });
             }
         };
