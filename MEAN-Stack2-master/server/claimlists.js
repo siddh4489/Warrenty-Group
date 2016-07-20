@@ -27,14 +27,14 @@ org.authenticate({ username: userName, password: password}, function(err, resp) 
 });
 
 function getClaims(req, res, next) {
-      alert(1);
+      console.log(' here ');
       org.getRecord({ type: 'Claim__c'}, function(err, listdata) {
-                alert(2);
+                console.log(' in ');
                 if(err) {
-                  alert(3);
+                  console.log(' if ');
                   console.error('--> ' + JSON.stringify(err));
                 } else {
-                  alert(4);
+                   console.log(' else ');
                   console.log('--> Claim__c retrieved ld'+listdata);
                 }
           });
