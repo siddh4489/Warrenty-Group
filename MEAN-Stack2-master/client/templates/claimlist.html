@@ -11,14 +11,16 @@
                         <h2>Nothing To Show.</h2>
                     </div>
                </div>
-                <div ng-if="couriers.length>0">
-                    
-                    
+                <div ng-if="claimlist.length>0">
+                    <div ng-repeat="claim in claimlist" class="list card"> 
+                       <div class="item item-divider">
+                        {{claim.Name}}
+                      </div>
+                      <a class="item" href="#">
+                        {{claim.Policy_Holder_Name__c}}
+                      </a> 
+                    </div>
                 </div>    
-              
-             
-             
-
       </div>
         
         <div class="list list-inset">
