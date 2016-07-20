@@ -27,17 +27,12 @@ org.authenticate({ username: userName, password: password}, function(err, resp) 
 });
 
 function getClaims(req, res, next) {
-      console.log(' here ');
+      
      
-      var q = 'SELECT Id, Name FROM Claim__c';
+      var q = 'SELECT Id, Name,Claimant_Name__c,Communication_Address__c,PAN_Number__c,Policy_Holder_Name__c,Telephone_Number__c FROM Claim__c';
 
         org.query({ query: q }, function(err, resp){
-            console.log(resp+'------'+resp.records);
-            console.log('--lenght----'+resp.records.length);
-             for (var i = 0; i < resp.records.length; i++) {
-                 console.log(i+'----'+resp.records[i]['Name']);
-             }
-         
+            
               if(!err && resp.records) {
              res.send(resp.records);
               }else{
