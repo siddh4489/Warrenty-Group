@@ -36,7 +36,7 @@ function getClaims(req, res, next) {
               if(!err && resp.records) {
               data = resp.records;
               }else{
-              data = 'No record Available''
+              data = 'No record Available';
               }
         }); 
      res.send(resp.records);
