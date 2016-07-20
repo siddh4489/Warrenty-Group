@@ -28,19 +28,18 @@ org.authenticate({ username: userName, password: password}, function(err, resp) 
 
 function getClaims(req, res, next) {
       console.log(' here ');
-      
-      var q = 'SELECT Id, Name FROM Claim__c';
+      var data;
+      var q = 'SELECT Id, Name FROM Claim__c;
 
         org.query({ query: q }, function(err, resp){
         
               if(!err && resp.records) {
-            
-                console.log('--> List is in Progress'+resp.records); 
+              data = resp.records;
               }else{
-                console.log('--> List is in else Progress'+resp.records); 
+              data = 'No record Available''
               }
         }); 
-     res.send('List is in Progress');
+     res.send(resp.records);
 };
 
 function revokeToken(req, res, next) {
