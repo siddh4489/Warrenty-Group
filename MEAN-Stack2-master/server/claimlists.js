@@ -2,7 +2,7 @@ var db = require('./pghelper'),
     config = require('./config'),
     nforce = require('nforce'),
      
-
+    var oauth;
     userName = config.api.userName,
     password = config.api.password;
 
@@ -28,44 +28,18 @@ org.authenticate({ username: userName, password: password}, function(err, resp) 
 
 function getClaims(req, res, next) {
      
-     db.query('SELECT sfid FROM salesforce.contact WHERE id=$1',[req.userId], true)
-        .then(function (user) {
-            console.log("sfid: " + user.sfid);
-            // case is a reserved word. using _case instead.
-            var claimObj = nforce.createSObject('Claim__c');
-            claimObj.set('Claimant_Name__c', req.body.claimant);
-            claimObj.set('Communication_Address__c', req.body.address);
-            claimObj.set('PAN_Number__c', req.body.panno);
-            claimObj.set('Policy_Holder_Name__c', req.body.policyholdername);
-            claimObj.set('Telephone_Number__c', req.body.phone);
+    
+          console.log('attempting to get the Claims');
+          org.getRecord({ type: 'Claim__c', oauth: oauth }, function(err, ld) {
+            if(err) {
+              console.error('--> unable to retrieve lead');
+              console.error('--> ' + JSON.stringify(err));
+            } else {
+              console.log('--> lead retrieved ld'+ld);
+              console.log('changed: ' + JSON.stringify(ld.changed(), '  '));
+            }
+          });
 
-            org.insert({ sobject: claimObj}, function(err, resp){
-                if (err) {
-                    console.log('First case insert failed: ' + JSON.stringify(err));
-                    org.authenticate({username: userName, password: password}, function(err) {
-                        if (err) {
-                            console.log('Authentication failed: ' + JSON.stringify(err));
-                            return next(err);
-                        } else {
-                            // retry
-                            org.insert({ sobject: claimObj}, function(err, resp) {
-                                if (err) {
-                                    console.log('Second case insert failed: ' + JSON.stringify(err));
-                                    return next(err);
-                                } else {
-                                    console.log('Second case insert worked');
-                                    return res.send('ok');
-                                }
-                            });
-                        }
-                    })
-                } else {
-                    console.log('First case insert worked');
-                    res.send('ok');
-                }
-            });
-        })
-.catch(next);
      
      res.send('Ok');
 };
