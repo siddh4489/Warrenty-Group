@@ -26,7 +26,7 @@ angular.module('nibs.claimlist', ['nibs.config'])
     //Controllers
     .controller('ClaimListController', function ($scope, $window, $ionicPopup, Claimlist, User) {
        
-       
+        $scope.submit();
         $scope.claimlist = {};
 
         $scope.submit = function () {
