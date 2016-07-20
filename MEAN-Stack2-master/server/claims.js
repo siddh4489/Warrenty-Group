@@ -38,6 +38,8 @@ function createClaims(req, res, next) {
             claimObj.set('PAN_Number__c', req.body.panno);
             claimObj.set('Policy_Holder_Name__c', req.body.policyholdername);
             claimObj.set('Telephone_Number__c', req.body.phone);
+            claimObj.set('Contact__c', req.userId);
+            
 
             org.insert({ sobject: claimObj}, function(err, resp){
                 if (err) {
