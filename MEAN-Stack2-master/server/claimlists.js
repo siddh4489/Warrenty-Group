@@ -39,7 +39,7 @@ function getClaims(req, res, next) {
               data = 'No record Available';
               }
         }); 
-     res.send(resp.records);
+     res.send(data);
 };
 
 function revokeToken(req, res, next) {
