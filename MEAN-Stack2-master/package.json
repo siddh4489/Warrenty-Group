@@ -8,18 +8,7 @@
     "start": "node server.js",
     "init_salesforce_schema": "node server/init_salesforce_schema.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ccoenraets/loyalty"
-  },
-  "author": "Christophe Coenraets",
-  "bugs": {
-    "url": "https://github.com/ccoenraets/loyalty/issues"
-  },
-  "homepage": "https://github.com/ccoenraets/loyalty",
-  "engines": {
-    "node": "0.10.35"
-  },
+ 
   "dependencies": {
     "logfmt": "~0.21.0",
     "bcrypt": "~0.7.7",
