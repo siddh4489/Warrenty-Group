@@ -28,13 +28,14 @@ org.authenticate({ username: userName, password: password}, function(err, resp) 
 
 function getClaims(req, res, next) {
       org.getRecord({ type: 'Claim__c'}, function(err, ld) {
-            if(err) {
-              console.error('--> ' + JSON.stringify(err));
-            } else {
-              console.log('--> lead retrieved ld'+ld);
-            }
+                if(err) {
+                  console.error('--> ' + JSON.stringify(err));
+                } else {
+                  console.log('--> Claim__c retrieved ld'+ld);
+                }
           });
-     res.send('Ok');
+     console.log('--> List is in Progress');     
+     res.send('List is in Progress');
 };
 
 function revokeToken(req, res, next) {
