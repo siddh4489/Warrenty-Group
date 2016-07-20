@@ -28,7 +28,7 @@ org.authenticate({ username: userName, password: password}, function(err, resp) 
 
 function getClaims(req, res, next) {
       console.log(' here ');
-      org.getRecord({ type: 'Claim__c', oauth: oauth}, function(err, listdata) {
+      org.getRecord({ type: 'Claim__c',id:'a022800000I0PDJ', oauth: oauth}, function(err, listdata) {
                 console.log(' in ');
                 if(err) {
                   console.log(' if ');
