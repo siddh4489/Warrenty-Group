@@ -6,33 +6,18 @@
 
     <ion-content has-header="true" padding="true">
         <div class="list">
-
-              <div class="item item-divider">
-                Candy Bars
-              </div>
-            
-              <a class="item" href="#">
-                Butterfinger
-              </a>
-              <a class="item" href="#">
-                Butterfinger2
-              </a>
-              <a class="item" href="#">
-                Butterfinger3
-              </a>
-              <div class="item item-divider">
-                Candy Bars2
-              </div>
-            
-              <a class="item" href="#">
-                Butterfinger
-              </a>
-              <a class="item" href="#">
-                Butterfinger2
-              </a>
-              <a class="item" href="#">
-                Butterfinger3
-              </a>
+               <div ng-if="claimlist.length==0">
+                    <div class="item" style="text-align:center;">
+                        <h2>Nothing To Show.</h2>
+                    </div>
+               </div>
+                <div ng-if="couriers.length>0">
+                    
+                    
+                </div>    
+              
+             
+             
 
       </div>
         
