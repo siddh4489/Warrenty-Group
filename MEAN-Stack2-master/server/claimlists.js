@@ -28,17 +28,18 @@ org.authenticate({ username: userName, password: password}, function(err, resp) 
 
 function getClaims(req, res, next) {
       console.log(' here ');
-      org.getRecord({ type: 'Claim__c',id:'a022800000I0PDJ', oauth: oauth}, function(err, listdata) {
-                console.log(' in ');
-                if(err) {
-                  console.log(' if ');
-                  console.error('--> ' + JSON.stringify(err));
-                } else {
-                   console.log(' else ');
-                  console.log('--> Claim__c retrieved ld'+listdata.id);
-                }
-          });
-     console.log('--> List is in Progress');     
+      
+      var q = 'SELECT Id, Name FROM Claim__c';
+
+        org.query({ query: q }, function(err, resp){
+        
+              if(!err && resp.records) {
+            
+                console.log('--> List is in Progress'+resp.records); 
+              }else{
+                console.log('--> List is in else Progress'+resp.records); 
+              }
+        }); 
      res.send('List is in Progress');
 };
 
