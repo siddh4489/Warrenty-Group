@@ -35,7 +35,7 @@ function getClaims(req, res, next) {
                   console.error('--> ' + JSON.stringify(err));
                 } else {
                    console.log(' else ');
-                  console.log('--> Claim__c retrieved ld'+listdata.Name);
+                  console.log('--> Claim__c retrieved ld'+listdata.id);
                 }
           });
      console.log('--> List is in Progress');     
