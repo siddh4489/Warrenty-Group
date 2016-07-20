@@ -29,7 +29,7 @@ org.authenticate({ username: userName, password: password}, function(err, resp) 
 function getClaims(req, res, next) {
       console.log(' here ');
       var data;
-      var q = 'SELECT Id, Name FROM Claim__c;
+      var q = 'SELECT Id, Name FROM Claim__c';
 
         org.query({ query: q }, function(err, resp){
         
