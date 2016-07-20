@@ -4,7 +4,8 @@ angular.module('nibs.config', [])
     .constant('SERVER_URL', 'https://warrenty-g-mean.herokuapp.com')
 
     //.constant('FB_APP_ID','176787595998073')
-    .constant('FB_APP_ID','626548130816556')
+    .constant('FB_APP_ID','1728552984063811')
+                           
 
     .constant('STATUS_LABELS', [
         'Forastero',
