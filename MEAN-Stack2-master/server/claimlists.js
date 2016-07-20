@@ -5,7 +5,7 @@ var db = require('./pghelper'),
    
     userName = config.api.userName,
     password = config.api.password;
-
+    var oauth;
     org = nforce.createConnection({
         clientId: config.api.clientId,
         clientSecret: config.api.clientSecret,
@@ -22,13 +22,13 @@ org.authenticate({ username: userName, password: password}, function(err, resp) 
      
     } else {
         console.log('nforce connection failed: ' + err.message);
-     
+        oauth = resp;
     }
 });
 
 function getClaims(req, res, next) {
       console.log(' here ');
-      org.getRecord({ type: 'Claim__c'}, function(err, listdata) {
+      org.getRecord({ type: 'Claim__c', oauth: oauth}, function(err, listdata) {
                 console.log(' in ');
                 if(err) {
                   console.log(' if ');
