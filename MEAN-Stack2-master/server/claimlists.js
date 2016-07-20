@@ -2,7 +2,7 @@ var db = require('./pghelper'),
     config = require('./config'),
     nforce = require('nforce'),
      
-    var oauth;
+   
     userName = config.api.userName,
     password = config.api.password;
 
@@ -27,20 +27,7 @@ org.authenticate({ username: userName, password: password}, function(err, resp) 
 });
 
 function getClaims(req, res, next) {
-     
     
-          console.log('attempting to get the Claims');
-          org.getRecord({ type: 'Claim__c', oauth: oauth }, function(err, ld) {
-            if(err) {
-              console.error('--> unable to retrieve lead');
-              console.error('--> ' + JSON.stringify(err));
-            } else {
-              console.log('--> lead retrieved ld'+ld);
-              console.log('changed: ' + JSON.stringify(ld.changed(), '  '));
-            }
-          });
-
-     
      res.send('Ok');
 };
 
