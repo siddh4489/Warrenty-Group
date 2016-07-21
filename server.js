@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 var db;
 
 // Connect to the database before starting the application server.  'mongodb://localhost:27017/mean-app'
-mongodb.MongoClient.connect('mongodb://heroku_7gk9vhj1:6f6o8ectcgk3q1uo2n5ta0ctnu@ds033133.mlab.com:33133/heroku_7gk9vhj1', function (err, database) {
+mongodb.MongoClient.connect('mongodb://heroku_134jwtc1:cp7ph2djqmm740hvra47hlqaol@ds033097.mlab.com:33097/heroku_134jwtc1', function (err, database) {
   if (err) {
     console.log(err);
     process.exit(1);
