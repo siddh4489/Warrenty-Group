@@ -9,12 +9,12 @@
     "init_salesforce_schema": "node server/init_salesforce_schema.js"
   },
   "repository": {
-    "type": "git",
-    "url": "https://github.com/ccoenraets/loyalty"
+    "type": "",
+    "url": ""
   },
-  "author": "Christophe Coenraets",
+  "author": "",
   "bugs": {
-    "url": "https://github.com/ccoenraets/loyalty/issues"
+    "url": ""
   },
   "homepage": "https://github.com/ccoenraets/loyalty",
   "engines": {
